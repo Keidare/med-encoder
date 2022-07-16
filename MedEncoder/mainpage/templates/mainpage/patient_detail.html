@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %} 
+
+{% block title %} | {{ patient.last_name }}, {{ patient.first_name }} {% endblock %}
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+    <h1> {{ patient.last_name }}, {{ patient.first_name }}</h1>
+        Diagnosis: {{ patient.diagnosis }}
+        Sex: {{ patient.sex }}
+        Address: {{ patient.address }}
+        Last checkup: {{ patient.last_checkup }}
+        Lab Results Date: {{ patient.lab_results_date }}
+        Lab Results Image: <img src={{patient.lab_results_img }}/>
+    <br>
+    <br>
+    <a href="{% url 'mainpage:index' %}" class="detail-return-button"> Return to Patient Directory </a>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %} 
+
+{% block title %} | New Patient {% endblock %}
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+    <form action= "{% url 'mainpage:add_patient' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1> New Patient </h1>
+        {{ patient_form }}
+        <br>
+        <button class="btn btn-outline-primary btn-block" type="submit">Confirm Patient</button>
+        <a href="{% url 'mainpage:index' %}" class="btn btn-outline-primary btn-block"> Return to Patient Directory </a>
+    </form>
+
+
+
+{% endblock %} 
